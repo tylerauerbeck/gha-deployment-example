@@ -21,7 +21,7 @@ jobs:
           octokit.repos.createDispatchEvent({
             owner: context.repo.owner,
             repo: "gha_app1_example",
-            event_type: "release_trigger"
+            event_type: "release_trigger",
             client_payload: {
               "release_name": "testing-1-2-3-rc"
             }
