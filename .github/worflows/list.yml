@@ -1,7 +1,6 @@
 name: Debug
 
-on:
-  push
+on: [push]
 
 jobs:
   list-repos:
