@@ -1,0 +1,14 @@
+name: Debug
+
+on:
+  push
+
+jobs:
+  list-repos:
+    strategy:
+      repo_name:
+      - https://github.com/tylerauerbeck/gha-app1-example
+      - https://github.com/tylerauerbeck/gha-app2-example
+    steps:
+      - run: |
+          echo ${{matrix.repo_name}}
