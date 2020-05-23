@@ -18,7 +18,7 @@ jobs:
       with:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
-          octokit.repos.createDispatchEvent({
+          github.repos.createDispatchEvent({
             owner: context.repo.owner,
             repo: "gha_app1_example",
             event_type: "release_trigger",
