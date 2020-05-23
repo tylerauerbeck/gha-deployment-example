@@ -5,6 +5,7 @@ on:
 
 jobs:
   list-repos:
+    runs-on: ubuntu-latest
     strategy:
       repo_name:
       - https://github.com/tylerauerbeck/gha-app1-example
