@@ -9,3 +9,4 @@ This is an example deployment repository that we can use to cut a release in ord
 - asd;f
 - listicle
 - more things to make the workflow run
+- lets trigger a release
