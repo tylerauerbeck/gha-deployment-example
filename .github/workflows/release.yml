@@ -1,4 +1,4 @@
-name: Debug
+name: Release 
 
 on: [push]
 
@@ -8,19 +8,16 @@ jobs:
     strategy:
       matrix:
         repo_name:
-        - https://github.com/tylerauerbeck/gha-app1-example
-        - https://github.com/tylerauerbeck/gha-app2-example
+        - gha-app1-example
+        - gha-app2-example
     steps:
-    - name: List Repo Name 
-      run: |
-        echo ${{matrix.repo_name}}
     - uses: actions/github-script@v1
       with:
         github-token: ${{secrets.RELEASE_TOKEN}}
         script: |
           github.repos.createDispatchEvent({
             owner: context.repo.owner,
-            repo: "gha-app1-example",
+            repo: ${{matrix.repo_name}},
             event_type: "release_trigger",
             client_payload: {
               "release_name": "testing-1-2-3-rc"
